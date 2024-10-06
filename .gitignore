@@ -1,0 +1,16 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore Visual Studio/VS Code settings
+.vscode/
+.vs/
+
+# Ignore auto-generated files
+*.g.cs
+*.user
+*.tmp
+
+# Ignore test results
+TestResults/
+.config/dotnet-tools.json
