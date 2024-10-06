@@ -6,6 +6,7 @@ using System.Windows.Input;
 using MyCalculator.Models;
 using MyCalculator.Services;
 using MyCalculator.ViewModels;
+using static MyCalculator.Models.CalculatorProcessor;
 
 namespace MyCalculator.ViewModels;
 

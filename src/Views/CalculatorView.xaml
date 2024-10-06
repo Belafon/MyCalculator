@@ -7,19 +7,6 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-
-    
-        <Grid.Resources>
-            <Style TargetType="TextBlock">
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="Background" Value="Black"/>
-            </Style>
-            <Style TargetType="Button">
-                <Setter Property="Foreground" Value="White"/>
-                <Setter Property="Background" Value="Black"/>
-            </Style>
-        </Grid.Resources>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="Auto" />
@@ -30,7 +17,6 @@
             Width="5"
             HorizontalAlignment="Center" 
             VerticalAlignment="Stretch"
-            Background="Black" 
             ShowsPreview="True"/>
 
         <local:HistoryListView Grid.Column="2" 
@@ -40,14 +26,30 @@
 
 
         <DockPanel Grid.Column="0">
-            <DockPanel DockPanel.Dock="Top">
-                <TextBox Text="{Binding CalculatorDisplayText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                    FontSize="24" 
-                    DockPanel.Dock="Top" />
-                <TextBlock Text="{Binding CalculationResultText, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
-                    FontSize="24" 
-                    DockPanel.Dock="Bottom" />
-            </DockPanel>
+            <Border BorderThickness="4" DockPanel.Dock="Top" BorderBrush="{StaticResource PrimaryBorderBrush}">
+                <DockPanel >
+                    <TextBox Text="{Binding CalculatorDisplayText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        FontSize="24" 
+                        Padding="10,5"
+                        VerticalContentAlignment="Center"
+                        VerticalAlignment="Center"
+                        BorderThickness="0"
+                        FontStretch="UltraExpanded"
+                        FontFamily="Courier New"
+                        Background="{StaticResource PrimaryBackgroundBrush}" 
+
+                        DockPanel.Dock="Top" />
+                    <TextBlock Text="{Binding CalculationResultText, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                        FontSize="24"
+                        Padding="10,5"
+                        FontFamily="Courier New"
+                        Background="{StaticResource PrimaryBackgroundBrush}"
+                        SnapsToDevicePixels="True" 
+                        FontStyle="Italic"
+                        VerticalAlignment="Center"
+                        DockPanel.Dock="Bottom" />
+                </DockPanel>
+            </Border>
             
             <Grid DockPanel.Dock="Bottom">
                 <Grid.RowDefinitions>
