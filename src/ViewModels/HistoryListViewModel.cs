@@ -36,10 +36,5 @@ public class HistoryListViewModel : ReactiveObject
 		_historyItems = records.Items;
 		HistoryItems.CollectionChanged += (sender, args) => OnPropertyChanged(nameof(HistoryItems));
 		_selectedHistoryItem = null;
-
-		if (HistoryItems.Count > 0)
-		{
-			SelectedHistoryItem = HistoryItems[0];
-		}
 	}
 }
